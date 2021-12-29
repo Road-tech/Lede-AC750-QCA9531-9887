@@ -1,44 +1,53 @@
-**English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+大R杂货 迷你4G无线路由 双频WiFi支持5G 随身便携 OpenWrt系统
 
-# Actions-OpenWrt
+MagicBox AC750 双频路由 QCA9531+9887
 
-[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
-![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
+![](https://raw.githubusercontent.com/Road-tech/Road-blog-Figure/main/2021/12/29-11-14-55-IMG_2409.JPG)
 
-A template for building OpenWrt with GitHub Actions
+## 硬件配置：
 
-## Usage
+- 高通 QCA9531 550Mhz CPU + 9887 5G Wi-Fi 芯片
 
-- Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
-- Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
-- Push `.config` file to the GitHub repository.
-- Select `Build OpenWrt` on the Actions page.
-- Click the `Run workflow` button.
-- When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
+- 16M闪存 / 128M内存
 
-## Tips
+- 433Mbps + 300Mbps 双频 Wi-Fi
 
-- It may take a long time to create a `.config` file and build the OpenWrt firmware. Thus, before create repository to build your own firmware, you may check out if others have already built it which meet your needs by simply [search `Actions-Openwrt` in GitHub](https://github.com/search?q=Actions-openwrt).
-- Add some meta info of your built firmware (such as firmware architecture and installed packages) to your repository introduction, this will save others' time.
+- USB 扩展口（ LTE 版两个 / Wi-Fi 版一个）
 
-## Credits
+- 两个百兆网口（默认 1WAN 1LAN）
 
-- [Microsoft Azure](https://azure.microsoft.com)
-- [GitHub Actions](https://github.com/features/actions)
-- [OpenWrt](https://github.com/openwrt/openwrt)
-- [Lean's OpenWrt](https://github.com/coolsnowwolf/lede)
-- [tmate](https://github.com/tmate-io/tmate)
-- [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate)
-- [csexton/debugger-action](https://github.com/csexton/debugger-action)
-- [Cowtransfer](https://cowtransfer.com)
-- [WeTransfer](https://wetransfer.com/)
-- [Mikubill/transfer](https://github.com/Mikubill/transfer)
-- [softprops/action-gh-release](https://github.com/softprops/action-gh-release)
-- [ActionsRML/delete-workflow-runs](https://github.com/ActionsRML/delete-workflow-runs)
-- [dev-drprasad/delete-older-releases](https://github.com/dev-drprasad/delete-older-releases)
-- [peter-evans/repository-dispatch](https://github.com/peter-evans/repository-dispatch)
+- TF 卡槽（Wi-Fi 版无）
 
-## License
+- LTE 版为 Type-C 供电 / Wi-Fi 版为 Micro USB 供电。
 
-[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)
+- 4G LTE 版为下图3D打印的黑色尼龙外壳 / Wi-Fi 版为上图亚克力外壳
+  
+  ![](https://raw.githubusercontent.com/Road-tech/Road-blog-Figure/main/2021/12/29-11-14-45-IMG_2410.JPG)
+
+- ## 固件相关
+
+此固件基于[coolsnowwolf](https://github.com/coolsnowwolf)的[lede稳定版](https://github.com/coolsnowwolf/openwrt)，属于openwrt 19.07，以纯净稳定为特色。
+
+考虑到9531的性能和闪存大小，相较于[Openwrt](https://github.com/Road-tech/Openwrt-AC750-QCA9531-9887)版本集成更多应用，如果需要纯净版，可以[点击跳转](https://github.com/Road-tech/Openwrt-AC750-QCA9531-9887))。
+
+不过依旧没有集成任何爬墙插件，闪存太小，性能太弱，感觉没什么可用的价值。
+
+默认集成LTE所需的kmod-usb-net、kmod-usb-net-rndis、usb-modeswitch驱动，默认添加WWAN网卡和防火墙，默认开启WIFI，开箱即用，无需手动配置。
+
+如果需要定制，可以自行fork修改，都有详细备注。
+
+## Openwrt配置相关
+
+- 默认管理页面: 192.168.8.1
+
+- 默认密码: password
+
+- 默认SSID：Road-MagicBox
+
+- LTE/4G 接口自动设置
+
+## Openwrt 集成应用
+
+自动编译脚本源自[P3TERX](https://github.com/P3TERX)/[Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
+
+脚本使用说明：[English](https://github.com/P3TERX/Actions-OpenWrt) | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
