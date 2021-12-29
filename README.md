@@ -28,7 +28,7 @@ MagicBox AC750 双频路由 QCA9531+9887
 
 此固件基于[coolsnowwolf](https://github.com/coolsnowwolf)的[lede稳定版](https://github.com/coolsnowwolf/openwrt)，属于openwrt 19.07，以纯净稳定为特色。
 
-考虑到9531的性能和闪存大小，相较于[Openwrt](https://github.com/Road-tech/Openwrt-AC750-QCA9531-9887)版本集成更多应用，如果需要纯净版，可以[点击跳转](https://github.com/Road-tech/Openwrt-AC750-QCA9531-9887))。
+考虑到9531的性能和闪存大小，相较于[Openwrt](https://github.com/Road-tech/Openwrt-AC750-QCA9531-9887)版本集成更多应用，如果需要纯净版，可以[点击跳转](https://github.com/Road-tech/Openwrt-AC750-QCA9531-9887)。
 
 不过依旧没有集成任何爬墙插件，闪存太小，性能太弱，感觉没什么可用的价值。
 
