@@ -98,7 +98,6 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        cd openwrt
         echo "add mwan3 config"
         rm -rf packages/net/mwan3/files/etc/config/mwan3
         [ -e $MWAN3CONFIG ] && cp $MWAN3CONFIG packages/net/mwan3/files/etc/config/mwan3
