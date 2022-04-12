@@ -98,10 +98,16 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        echo "add mwan3 config"
-        rm -rf packages/net/mwan3/files/etc/config/mwan3
-        [ -e $MWAN3CONFIG ] && cp $MWAN3CONFIG packages/net/mwan3/files/etc/config/mwan3
-        echo packages/net/mwan3/files/etc/config/mwan3
+
+    - name: add mwan3 config
+      run: |
+        echo "mwan3 config:"
+        cat $MWAN3CONFIG
+        echo "orgine config:"
+        cat openwrt/packages/net/mwan3/files/etc/config/mwan3
+        mv $MWAN3CONFIG openwrt/packages/net/mwan3/files/etc/config/mwan3
+        echo "new  config:"
+        cat openwrt/packages/net/mwan3/files/etc/config/mwan3
 
     - name: Compile the firmware
       id: compile
