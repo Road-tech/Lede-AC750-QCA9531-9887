@@ -79,7 +79,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        [ -e $MWAN3CONFIG ] && mv $MWAN3CONFIG packages/net/mwan3/files/etc/config/mwan3
+        [ -e $MWAN3CONFIG ] && cp $MWAN3CONFIG packages/net/mwan3/files/etc/config/mwan3
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
